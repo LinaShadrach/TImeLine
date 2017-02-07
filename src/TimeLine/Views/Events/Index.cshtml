@@ -1,0 +1,21 @@
+﻿@model IEnumerable<TimeLine.Models.Event>
+
+<html>
+<head>
+    <title>Timeline</title>
+</head>
+<body>
+    @Html.ActionLink("Home ", "Index", "Home", null)
+
+    <h2>Events</h2>
+    <p>@Html.ActionLink("Add new Event", "Create")</p>
+    <ul>
+        @foreach (var listItem in Model)
+        {
+
+            <li>
+            <h4>@Html.DisplayFor(modelItem => listItem.Title)</h4>@Html.DisplayFor(modelItem => listItem.Description) | @Html.ActionLink("Edit", "Edit", new { id = listItem.Id }) |  @Html.ActionLink("Delete", "Delete", new { id = listItem.Id })</li>
+        }
+    </ul>
+</body>
+</html>

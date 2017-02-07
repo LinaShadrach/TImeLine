@@ -1,0 +1,30 @@
+﻿@model TimeLine.Models.Event
+
+<html>
+<head>
+    <title>Historical Events - Edit</title>
+</head>
+<body>
+    <h2>Edit</h2>
+    <hr />
+    <h4>Edit this event: @Html.DisplayFor(model => model.Title)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.LabelFor(model => model.Date)
+        @Html.EditorFor(model => model.Date)
+
+        @Html.LabelFor(model => model.Title)
+        @Html.EditorFor(model => model.Title)
+
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+</body>
+</html>

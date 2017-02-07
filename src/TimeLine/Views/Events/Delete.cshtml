@@ -1,0 +1,23 @@
+﻿@model TimeLine.Models.Event
+
+<html>
+<head>
+    <title>TimeLine - Delete</title>
+</head>
+<body>
+
+    <h2>Are you sure you want to delete this?</h2>
+    <hr />
+    @Html.DisplayNameFor(model => model.Date): @Html.DisplayFor(model => model.Date)
+
+    @Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)
+
+    @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete" />
+    }
+    @Html.ActionLink("Back to List", "Index")
+</body>
+</html>
